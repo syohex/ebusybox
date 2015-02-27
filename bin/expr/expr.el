@@ -3,8 +3,6 @@
 ;; Copyright (C) 2015 by Syohei YOSHIDA
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
-;; URL: https://github.com/syohex/
-;; Version: 0.01
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -77,6 +75,7 @@
 		   (if (-pop-stack-p arg stack-top)
 		       (progn
 			 (push stack-top rpn)
+                         (pop op-stack)
 			 (setq stack-top (car op-stack)))
 		     (setq finish t)))))
              (push arg op-stack))
