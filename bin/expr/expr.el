@@ -21,8 +21,6 @@
 
 ;;; Code:
 
-(require 'cl-lib)
-
 (defconst -operator-priority
   '(("^" .  6)
     ("*" .  5)
