@@ -26,4 +26,9 @@ subtest 'simple calculation' => sub {
     is $got, "729\n";
 };
 
+subtest 'complicate' => sub {
+    my $got = `emacs --script expr.el \\( 1 + 5 \\) \\* \\( 2 + 3 \\)`;
+    is $got, "30\n";
+};
+
 done_testing;
