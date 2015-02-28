@@ -7,3 +7,10 @@ busybox is implemented in Emacs Lisp
 ```
 % prove -vr t/
 ```
+
+## Commands
+
+### bin
+
+- [echo](bin/echo.el)
+- [expr](bin/expr.el)
