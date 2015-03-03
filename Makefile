@@ -1,0 +1,17 @@
+.PHONY : test
+
+EMACS ?= emacs
+
+LOADPATH = -L .
+LOAD_HELPER = -l t/test-helper.el
+
+all: test test-elisp
+
+test:
+	prove -vr t/
+
+test-elisp: test-elisp-bin
+
+test-elisp-bin:
+	$(EMACS) -Q -batch $(LOAD_HELPER) -l bin/expr/expr.el \
+		-l bin/expr/expr-test.el -f ert-run-tests-batch-and-exit
