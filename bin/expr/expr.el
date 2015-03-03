@@ -93,7 +93,7 @@
     (while (not (null op-stack))
       (let ((stack-top (pop op-stack)))
 	(push stack-top rpn)))
-    rpn))
+    (reverse rpn)))
 
 (defconst -op-table
   '(("+" . +)
@@ -127,7 +127,7 @@
   (when (zerop (length argv))
     (error "Usage: expr expression..."))
   (let ((rpn (-infix-to-rpn argv)))
-    (princ (-eval-rpn (reverse rpn)))
+    (princ (-eval-rpn rpn))
     (princ "\n")))
 
 (main)
