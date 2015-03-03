@@ -26,7 +26,25 @@
 (ert-deftest infix-to-rpn ()
   "Convert infix to RPN notation"
 
+  (let ((got (-infix-to-rpn '("1"))))
+    (should (equal got '("1"))))
+
   (let ((got (-infix-to-rpn '("1" "+" "2"))))
-    (should (equal got '("1" "2" "+")))))
+    (should (equal got '("1" "2" "+"))))
+
+  (let ((got (-infix-to-rpn '("5" "+" "(" "(" "1" "+" "2" ")" "*" "4" ")" "-" "3"))))
+    (should (equal got '("5" "1" "2" "+" "4" "*" "+" "3" "-")))))
+
+(ert-deftest eval ()
+  "Evaluate RPN expression"
+
+  (let ((got (-eval-rpn '("1"))))
+    (should (= got 1)))
+
+  (let ((got (-eval-rpn '("1" "2" "+"))))
+    (should (= got 3)))
+
+  (let ((got (-eval-rpn '("5" "1" "2" "+" "4" "*" "+" "3" "-"))))
+    (should (equal got 14))))
 
 ;;; expr-test.el ends here
