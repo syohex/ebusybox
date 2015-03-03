@@ -130,6 +130,7 @@
     (princ (-eval-rpn rpn))
     (princ "\n")))
 
-(main)
-(setq argv nil)
+(unless (boundp '--unit-test)
+  (main)
+  (setq argv nil))
 ;;; expr.el ends here

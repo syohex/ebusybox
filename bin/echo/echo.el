@@ -60,5 +60,6 @@
     (unless nflag
       (princ "\n"))))
 
-(main)
+(unless (boundp '--unit-test)
+  (main))
 ;;; echo.el ends here
