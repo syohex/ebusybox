@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::More;
 
-chdir "bin/expr";
+chdir "src/bin/expr";
 
 subtest 'one argument' => sub {
     my $got = `emacs --script expr.el 1`;

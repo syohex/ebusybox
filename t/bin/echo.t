@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::More;
 
-chdir "bin/echo";
+chdir "src/bin/echo";
 
 subtest 'normal' => sub {
     my $got = `emacs --script echo.el hello`;
