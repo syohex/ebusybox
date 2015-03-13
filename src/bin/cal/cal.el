@@ -39,7 +39,7 @@
 
 (defun -print-month (year month)
   (princ (-month-string year month 0))
-  (insert "\n\n"))
+  (princ "\n\n"))
 
 (defun -3month-string (year month)
   (with-temp-buffer
