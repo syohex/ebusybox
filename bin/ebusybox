@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+use FindBin;
+
+my %command_path = (
+    echo => 'bin/echo/echo.el',
+    expr => 'bin/expr/expr.el',
+    cal  => 'bin/cal/cal.el',
+);
+
+my $command = shift or die "Usage: ebusybox command argument...\n";
+
+unless (exists $command_path{$command}) {
+    die "Command '$command' is not implemented yet\n";
+}
+
+my $root = File::Spec->catfile($FindBin::Bin, File::Spec->updir);
+my $path = File::Spec->catfile($root, "src", $command_path{$command});
+
+exec { "emacs" } ("emacs", "--script", $path, @ARGV);
