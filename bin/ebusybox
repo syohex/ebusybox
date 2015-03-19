@@ -5,9 +5,13 @@ use warnings;
 use FindBin;
 
 my %command_path = (
+    # /bin
     echo => 'bin/echo/echo.el',
     expr => 'bin/expr/expr.el',
     cal  => 'bin/cal/cal.el',
+
+    # /usr/bin
+    basename => 'usr.bin/basename/basename.el'
 );
 
 my $command = shift or die "Usage: ebusybox command argument...\n";
