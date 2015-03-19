@@ -1,6 +1,6 @@
 # ebusybox [![travis badge][travis-badge]][travis-link]
 
-busybox is implemented in Emacs Lisp
+[busybox](http://www.busybox.net/) is implemented in Emacs Lisp
 
 ## Unit Test
 
