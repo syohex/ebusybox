@@ -10,10 +10,16 @@ busybox is implemented in Emacs Lisp
 
 ## Commands
 
-### bin
+### /bin
 
-- [echo](bin/echo.el)
-- [expr](bin/expr.el)
+- [echo](src/bin/echo/echo.el)
+- [expr](src/bin/expr/expr.el)
+- [cal](src/bin/cal/cal.el)
+
+### /usr/bin
+
+- [basename](src/usr.bin/basename/basename.el)
+
 
 [travis-badge]: https://travis-ci.org/syohex/ebusybox.svg
 [travis-link]: https://travis-ci.org/syohex/ebusybox
