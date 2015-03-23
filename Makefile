@@ -8,7 +8,7 @@ LOAD_HELPER = -l t/test-helper.el
 all: test test-elisp
 
 test:
-	env PATH=$(PWD)/bin:$(PATH) prove -vr t/
+	@env PATH=$(PWD)/bin:$(PATH) prove -vr t/
 
 test-elisp: test-elisp-bin
 
