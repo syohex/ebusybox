@@ -19,6 +19,7 @@
 ### /usr/bin
 
 - [basename](src/usr.bin/basename/basename.el)
+- [dirname](src/usr.bin/dirname/dirname.el)
 
 
 [travis-badge]: https://travis-ci.org/syohex/ebusybox.svg
