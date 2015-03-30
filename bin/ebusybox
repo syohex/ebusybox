@@ -12,7 +12,8 @@ my %command_path = (
 
     # /usr/bin
     basename => 'usr.bin/basename/basename.el',
-    dirname  => 'usr.bin/dirname/dirname.el'
+    dirname  => 'usr.bin/dirname/dirname.el',
+    wc       => 'usr.bin/wc/wc.el',
 );
 
 my $command = shift or die "Usage: ebusybox command argument...\n";
