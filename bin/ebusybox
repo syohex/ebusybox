@@ -25,3 +25,7 @@ my $root = File::Spec->catfile($FindBin::Bin, File::Spec->updir);
 my $path = File::Spec->catfile($root, "src", $command_path{$command});
 
 exec { "emacs" } ("emacs", "--script", $path, @ARGV);
+
+# Local Variables:
+# mode: cperl
+# End:
