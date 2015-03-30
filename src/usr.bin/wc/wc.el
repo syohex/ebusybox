@@ -119,7 +119,7 @@
 
 (defun -print-results (counts total files)
   (let* ((file-p (> (length files) 0))
-         (fmt (concat " " (-format counts file-p))))
+         (fmt (concat " " (-format (if total (cons total counts) counts)  file-p))))
     (cl-loop for count in counts
              for params = (-count-to-format-params count file-p)
              do
